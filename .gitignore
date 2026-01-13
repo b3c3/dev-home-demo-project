@@ -1,3 +1,8 @@
+# Temporarily exclude the Terraform dot lock dot hcl file from Git for now.
+# This is to keep the project folder clean and simple when learners first clone it.
+# TODO: Revisit this decision later. Remove this ignore when ready.
+.terraform.lock.hcl
+
 # Local .terraform directories
 .terraform/
 
