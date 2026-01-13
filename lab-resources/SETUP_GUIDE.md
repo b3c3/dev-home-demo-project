@@ -56,15 +56,15 @@ terraform init
 
 Plan the changes (replace `yourname` with your actual name):
 ```bash
-terraform plan -var="student_name=yourname"
+terraform plan -var="learner_name=yourname"
 ```
 
 Apply the changes to create the bucket:
 ```bash
-terraform apply -var="student_name=yourname"
+terraform apply -var="learner_name=yourname"
 ```
 
 When finished, destroy the resources so you don't incur costs:
 ```bash
-terraform destroy -var="student_name=yourname"
+terraform destroy -var="learner_name=yourname"
 ```

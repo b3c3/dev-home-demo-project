@@ -1,5 +1,5 @@
-variable "student_name" {
-  description = "The name of the student to be used as the bucket prefix. No spaces or special characters."
+variable "learner_name" {
+  description = "The name of the learner to be used as the bucket prefix. No spaces or special characters."
   type        = string
 }
 
@@ -17,13 +17,13 @@ resource "random_id" "bucket_suffix" {
 
 resource "aws_s3_bucket" "unique_bucket" {
   # Bucket naming rules: Lowercase, numbers, hyphens.
-  # We combine the student name with a random suffix for uniqueness.
-  bucket = "${lower(var.student_name)}-${random_id.bucket_suffix.hex}"
+  # We combine the learner name with a random suffix for uniqueness.
+  bucket = "${lower(var.learner_name)}-${random_id.bucket_suffix.hex}"
 
   tags = {
-    Name        = "Unique S3 Bucket for ${var.student_name}"
-    Environment = "Education"
-    Owner       = var.student_name
+    Name        = "Unique S3 Bucket for ${var.learner_name}"
+    Environment = "CIL Academy Sandbox"
+    Owner       = var.learner_name
   }
 }
 
