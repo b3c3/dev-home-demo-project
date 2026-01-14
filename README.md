@@ -1,7 +1,7 @@
-# Terraform S3 Bucket Lab: User Guide
+# Mini-Project to Demonstrate using the Dev-Home & Dev-Tools Setup
 
 Welcome!   
-This mini-project tdemonstrates how to use the tools set up in the CIL Academy Guide Document - "How to Setup Your Dev-Home Folder".   
+This mini-project demonstrates how to use the tools set up in the CIL Academy Guide Document - "How to Setup Your Dev-Home Folder".   
 You will use Terraform to provision a unique AWS S3 bucket and then verify it by uploading a file using a Python script (which uses AWS CLI S3 commands to do the job).
 
 ## Project Overview
@@ -89,10 +89,20 @@ We have provided a Python script `upload_file.py` to test uploading a file to yo
     ```
 
 2.  Run the upload script:
-    *Replace `<bucket_name>` with the output from the terraform apply step.*
+    
     ```bash
     python3 upload_file.py <bucket_name> test_file.txt
     ```
+    - *Replace `<bucket_name>` with the output from the terraform apply step.*
+
+    If using the sample image provided in the lab_resources folder, the command should be:
+    ```bash
+    python3 upload_file.py <bucket_name> lab-resources/secret.png
+    ```
+     - *Replace `<bucket_name>` with the output from the terraform apply step.*
+
+    You can upload as many files as you wish, just specify their path.
+
 
 3.  If successful, you will see:
     > Success! File uploaded successfully.
