@@ -41,6 +41,8 @@ def upload_file(bucket_name, file_path):
 if __name__ == "__main__":
     # 0. Check arguments
     if len(sys.argv) != 3:
+        print("Error: [Invalid number of arguments] ")
+        print("You have not provided the required arguments to execute the script.")
         print("Usage: python3 upload_file.py <bucket_name> <file_path>")
         sys.exit(1)
 
