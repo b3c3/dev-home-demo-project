@@ -1,14 +1,16 @@
 # Mini-Project to Demonstrate using the Dev-Home & Dev-Tools Setup
 
 Welcome!   
-This mini-project demonstrates how to use the tools set up in the CIL Academy Guide Document - "How to Setup Your Dev-Home Folder".   
+This mini-project demonstrates how to use the tools set up in the CIL Academy Guide Document - "_How to Setup Your Dev-Home Folder_".       
+
 You will use Terraform to provision a unique AWS S3 bucket and then verify it by uploading a file using a Python script (which uses AWS CLI S3 commands to do the job).
 
-## Project Overview
+Clone this repository into your Dev-Projects folder and then either follow the trainer's instructions (where applicable) or use the guide below to complete it.
 
-This project demonstrates Infrastructure as Code (IaC) concepts using Terraform.
+## Project Goal & Tools
+
 - **Goal**: Create an S3 bucket in AWS and verify write access.
-- **Tools**: Terraform, AWS CLI, Python.
+- **Tools**: Git, Terraform, AWS CLI, Python.
 
 ## Prerequisites
 
@@ -78,9 +80,9 @@ aws s3 ls | grep yourname
 ```
 
 ### Step B: Test File Upload
-We have also provided a sample image you can use for testing (`lab-resources/secret.png`). Do feel free to create or use your own file.
-
 We have provided a Python script `upload_file.py` to test uploading a file to your new bucket.
+
+We have also provided a sample image you can use for testing (`lab-resources/secret.png`). Do feel free to create or use your own file (e.g., as seen below).
 
 
 1.  Create a test file:
@@ -113,10 +115,11 @@ We have provided a Python script `upload_file.py` to test uploading a file to yo
 
 When finished, you **MUST empty the bucket** before destroying the infrastructure. Terraform cannot destroy a non-empty bucket by default.
 
-1.  Empty the bucket (replace `yourname` with your bucket name):
+1.  Empty the bucket:
     ```bash
-    aws s3 rm s3://your-bucket-name --recursive
+    aws s3 rm s3://<bucket_name> --recursive
     ```
+    - *Replace `<bucket_name>` with the output from the terraform apply step.*
 
 2.  Destroy the resources:
     ```bash
